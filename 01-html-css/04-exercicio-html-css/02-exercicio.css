@@ -1,0 +1,65 @@
+/*Padronizando as tags*/
+
+* {
+    margin: 0px;
+    padding: 0px;
+    float: 14px sans-serif;
+}
+
+
+/*tags*/
+
+header {
+    background-color: black;
+    color: white;
+    overflow: auto;
+}
+
+nav {
+    float: right;
+}
+
+a {
+    text-decoration: none;
+    padding: 22px;
+    display: inline-block;
+}
+
+a:hover {
+    background-color: rgba(141, 134, 134, 0.918);
+}
+
+a:link {
+    color: white;
+}
+
+a:active {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+}
+
+
+/*Classes*/
+
+.titulo {
+    font-size: 32px;
+    float: left;
+    text-align: justify;
+    margin: 10px;
+}
+
+.conteudoinformativo {
+    height: 400px;
+    margin-left: 60px;
+    margin-right: 60px;
+    text-indent: 30px;
+}
