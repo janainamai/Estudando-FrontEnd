@@ -1,0 +1,27 @@
+<script>
+
+    //classe Pessoa
+    class Pessoa {
+
+        //saudação
+        saudacaoPessoa() {
+            console.log("Olá, eu sou uma pessoa...");
+        }
+    }
+
+    //classe Colaborador herda tudo o que a classe Pessoa tem
+    //extends Pessoa
+    class Colaborador extends Pessoa{
+
+        //método 
+        saudacaoColaborador() {
+            console.log("Olá, eu sou um colaborador...");
+        }
+    }
+
+    //objeto
+    var objeto = new Colaborador();
+    objeto.saudacaoPessoa();
+    objeto.saudacaoColaborador();
+
+</script>

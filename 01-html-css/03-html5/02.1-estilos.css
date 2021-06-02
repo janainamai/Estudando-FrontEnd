@@ -1,0 +1,56 @@
+/*padronizando todas as tags*/
+* {
+    margin: 0px;
+    padding: 0px;
+    font: 14px sans-serif;
+}
+
+/*estilizando tags html5*/
+header {
+    background-color: black;
+    /*Faz o float respeitar a altura dos elementos*/
+    overflow: auto;
+}
+
+nav {
+    float: right;
+}
+
+main{
+    width: 850px;
+    margin: 0 auto;
+    border: solid 1px #cccccc;
+}
+
+footer{
+    margin-top: 30px;
+    text-align: center;
+}
+
+/*Links*/
+a {
+    color: white;
+    text-decoration: none;
+    padding: 22px;
+    display: inline-block;
+}
+
+a:hover{
+    background-color: #cccccc;
+}
+
+/*IDs*/
+#titulo {
+    font-size: 32px;
+    color: white;
+    margin: 10px;
+    float: left;
+}
+
+#texto{
+    /*espaçamento entre linhas*/
+    line-height: 20px;
+    text-align: justify;
+    text-indent: 20px;
+    margin-top: 30px;
+}

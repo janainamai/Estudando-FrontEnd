@@ -1,0 +1,33 @@
+<script>
+
+    //classe
+    class Produto {
+
+        //construtor
+        constructor(nome, idade) {
+
+            //chamando os métodos
+            this.mensagem(nome);
+            this.validarIdade(idade);
+        }
+
+        //método de boas vindas
+        mensagem(nome) {
+            console.log("Olá " + nome);
+        }
+
+        //método para validar idade
+        validarIdade(idade) {
+            if (idade >= 18) {
+                console.log("Maior de idade");
+            } else {
+                console.log("Menor de idade");
+            }
+        }
+
+    }
+
+    //objeto
+    var objeto = new Produto("Janaina", 21);
+
+</script>
