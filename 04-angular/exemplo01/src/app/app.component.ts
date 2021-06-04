@@ -20,12 +20,15 @@ export class AppComponent {
         Validators.required
       ])]
     });
+
+    this.carregar();
   }
-  
+
   adicionar() {
     const title = this.form.controls['title'].value;
     const id = this.tarefas.length + 1;
     this.tarefas.push(new Tarefa(id, title, false));
+    this.salvar();
     this.limpar();
   }
 
@@ -34,6 +37,7 @@ export class AppComponent {
     if (index != -1) {
       this.tarefas.splice(index, 1);
     }
+    this.salvar();
   }
 
   limpar() {
@@ -42,10 +46,20 @@ export class AppComponent {
 
   marcarComoFeito(tarefa: Tarefa) {
     tarefa.feito = true;
-
+    this.salvar();
   }
 
   marcarComoNaoFeito(tarefa: Tarefa) {
     tarefa.feito = false;
+    this.salvar();
+  }
+
+  salvar() {
+    const dados = JSON.stringify(this.tarefas);
+    localStorage.setItem('tarefas', dados);
+  }
+
+  carregar() {
+    this.tarefas = JSON.parse(localStorage.getItem('tarefas') || '{}');
   }
 }
