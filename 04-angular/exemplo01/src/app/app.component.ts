@@ -60,6 +60,11 @@ export class AppComponent {
   }
 
   carregar() {
-    this.tarefas = JSON.parse(localStorage.getItem('tarefas') || '{}');
+    const dados = localStorage.getItem('tarefas');
+    if (dados) {
+      this.tarefas = JSON.parse(dados);
+    } else {
+      this.tarefas = [];
+    }
   }
 }

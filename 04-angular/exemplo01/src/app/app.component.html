@@ -1,4 +1,4 @@
-<h1>{{titulo}}</h1>
+<h1 class="title">{{titulo}}</h1>
 <ul>
 
   <p *ngIf="tarefas.length==0">
@@ -6,9 +6,9 @@
   </p>
 
   <li *ngFor="let tarefa of tarefas">
-    {{tarefa.id}}. {{tarefa.descricao}}
-    <button *ngIf="!tarefa.feito" (click)="marcarComoFeito(tarefa)">CONCLUIR</button> |
-    <button *ngIf="tarefa.feito" (click)="marcarComoNaoFeito(tarefa)">REFAZER</button> |
+    {{tarefa.descricao}}
+    <button *ngIf="!tarefa.feito" (click)="marcarComoFeito(tarefa)">CONCLUIR</button> 
+    <button *ngIf="tarefa.feito" (click)="marcarComoNaoFeito(tarefa)">REFAZER</button> 
     <button (click)="remover(tarefa)">REMOVER</button>
   </li>
 </ul>
@@ -19,6 +19,6 @@
     <input type="text" placeholder="Título da Tarefa" maxlength="60" formControlName="title">
     <small *ngIf="form.controls.title.invalid && !form.controls.title.pristine">Este campo deve
       conter entre 5 e 60 caracteres</small>
-    <button [disabled]="form.invalid" (click)="adicionar()">Salvar</button>
+    <button class="button" [disabled]="form.invalid" (click)="adicionar()">Salvar</button>
   </fieldset>
 </form>
