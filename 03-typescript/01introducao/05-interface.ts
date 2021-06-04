@@ -6,8 +6,8 @@ interface Carro {
 }
 
 //criar um objeto
-var cadastrarCarro01: Carro{
-    cor:"Azul",
-    valor:20000,
-    ano:2015
+var cadastrarCarro01: Carro {
+    cor: "azul",
+    valor: 20000,
+    ano: 2015
 }
