@@ -1,5 +1,24 @@
-<h1>{{title}}</h1>
-<button (click)="alteraTexto()">Alterar</button>
+<h1>{{titulo}}</h1>
 <ul>
-  <li *ngFor="let todo of todos">{{todo}}</li>
-</ul>  
+
+  <p *ngIf="tarefas.length==0">
+    <small>Você não tem nenhuma tarefa hoje!</small>
+  </p>
+
+  <li *ngFor="let tarefa of tarefas">
+    {{tarefa.id}}. {{tarefa.descricao}}
+    <button *ngIf="!tarefa.feito" (click)="marcarComoFeito(tarefa)">CONCLUIR</button> |
+    <button *ngIf="tarefa.feito" (click)="marcarComoNaoFeito(tarefa)">REFAZER</button> |
+    <button (click)="remover(tarefa)">REMOVER</button>
+  </li>
+</ul>
+
+<form [formGroup]="form">
+  <fieldset>
+    <label>Tarefa: </label>
+    <input type="text" placeholder="Título da Tarefa" maxlength="60" formControlName="title">
+    <small *ngIf="form.controls.title.invalid && !form.controls.title.pristine">Este campo deve
+      conter entre 5 e 60 caracteres</small>
+    <button [disabled]="form.invalid" (click)="adicionar()">Salvar</button>
+  </fieldset>
+</form>
