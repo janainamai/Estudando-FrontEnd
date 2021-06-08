@@ -3,6 +3,7 @@
     <div>
         <label for="hero-name">Nome: </label>
         <input id="hero-id" [(ngModel)]="hero.name" placeholder="Nome do herói" />
+        <button (click)="save()">Salvar</button>
     </div>
     <button (click)="goBack()">Voltar ao Início</button>
 </div>
